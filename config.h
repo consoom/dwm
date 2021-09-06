@@ -59,7 +59,6 @@ static const Layout layouts[] = {
 
 #define STATUSBAR "dwmblocks"
 
-
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
@@ -99,8 +98,11 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
 
 	{ 0, XF86XK_AudioMute,		spawn,     SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
-	{ 0, XF86XK_AudioRaiseVolume,	spawn,     SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)") },
-	{ 0, XF86XK_AudioLowerVolume,	spawn,     SHCMD("pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)") },
+	{ 0, XF86XK_AudioRaiseVolume,	spawn,     SHCMD("pamixer -i 5; kill -44 $(pidof dwmblocks)") },
+	{ 0, XF86XK_AudioLowerVolume,	spawn,     SHCMD("pamixer -d 5; kill -44 $(pidof dwmblocks)") },
+	{ MODKEY, XF86XK_AudioRaiseVolume,	spawn,     SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)") },
+	{ MODKEY, XF86XK_AudioLowerVolume,	spawn,     SHCMD("pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)") },
+	{ MODKEY, XF86XK_AudioMute,		spawn,     SHCMD("pamixer --set-volume 100; kill -44 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioPause,		spawn,     SHCMD("playerctl play-pause") },
 	{ 0, XF86XK_AudioPlay,		spawn,     SHCMD("playerctl play-pause") },
 	{ 0, XF86XK_AudioStop,		spawn,     SHCMD("playerctl stop") },
