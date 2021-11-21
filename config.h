@@ -109,6 +109,8 @@ static Key keys[] = {
 	{ 0, XF86XK_AudioPrev,		spawn,     SHCMD("playerctl previous") },
 	{ 0, XF86XK_AudioNext,		spawn,     SHCMD("playerctl next") },
 
+	{ MODKEY, XK_p,			spawn,     SHCMD("maim --select | xclip -selection clipboard -t image/png") },
+
 	{ MODKEY,			XK_w,		spawn,		SHCMD("$BROWSER") },
 
 	TAGKEYS(                        XK_1,                      0)
