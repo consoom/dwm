@@ -109,7 +109,8 @@ static Key keys[] = {
 	{ 0, XF86XK_AudioPrev,		spawn,     SHCMD("playerctl previous") },
 	{ 0, XF86XK_AudioNext,		spawn,     SHCMD("playerctl next") },
 
-	{ MODKEY, XK_p,			spawn,     SHCMD("maim --select | xclip -selection clipboard -t image/png") },
+	{ MODKEY, XK_p,			spawn,     SHCMD("maim --select --hidecursor | xclip -selection clipboard -t image/png") },
+	{ MODKEY|ShiftMask, XK_p,	spawn,     SHCMD("maim | xclip -selection clipboard -t image/png") },
 
 	{ MODKEY,			XK_w,		spawn,		SHCMD("$BROWSER") },
 
