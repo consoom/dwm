@@ -138,6 +138,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_y,      togglescratch,  {.ui = 0 } },
+	{ MODKEY|ShiftMask,		XK_s,      togglesticky,   {0} },
 	{ MODKEY|ShiftMask,             XK_F5,     xrdb,           {.v = NULL } },
 
 	// program shortcuts
