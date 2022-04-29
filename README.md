@@ -29,7 +29,7 @@ I have added the following layouts from the vanitygaps patch:
 - *nrowgrid* — grid view, customizable number of rows by changing the number of master windows
 - *centeredmaster* — masters in the middle, slaves leftward and rightward
 - *floating* — no tiling at all
-[//]: #
+
 The keybindings for the layouts can be found [on this page in the keybindings section](https://github.com/consoom/dwm#layout-keybindings).
 
 ## Installation
