@@ -19,7 +19,7 @@ This build of dwm is based on [dwm 6.3](https://dl.suckless.org/dwm/dwm-6.3.tar.
 - [xrdb](https://github.com/consoom/dwm/blob/master/patches/dwm-xrdb-6.2.diff) ([source](https://dwm.suckless.org/patches/xrdb/)) — makes it possible to dynamically reload the colors used in dwm via xrdb
 
 ## Layouts
-I have added the following layouts from the vanitygaps patch:
+This build includes the following layouts:
 - *tile* — default layout: masters on left, slaves on right
 - *bstack* — masters on top, slaves on bottom
 - *spiral* — fibonacci spiral
