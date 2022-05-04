@@ -3,7 +3,7 @@
 My personal build of dwm
 
 ## About
-I use this repository as a way to version control any changes I make to my window manager. My window manager contains keybindings and other customizations that are adopted to my own workflow, and thus, aren't usable for everyone. You might however take inspiration out this build or contribute and suggest improvements. A lot of keybindings and general tools in this build rely on other programs and configurations that I keep track of in my [dotfiles repository](https://github.com/consoom/comfydots).
+I use this repository as a way to version control any changes I make to my window manager. My window manager contains keybindings and other customizations that are adopted to my own workflow, and thus, aren't usable for everyone. You might however take inspiration out of this build or contribute and suggest improvements. A lot of keybindings and general tools in this build rely on other programs and configurations that I keep track of in my [dotfiles repository](https://github.com/consoom/comfydots).
 
 ## Patches done to dwm
 This build of dwm is based on [dwm 6.3](https://dl.suckless.org/dwm/dwm-6.3.tar.gz) (2022-01-07) and modified with patches and other changes of the sourcecode. I have kept all *.diff* files I used to patch dwm in [master/patches](https://github.com/consoom/dwm/tree/master/patches):
@@ -86,6 +86,16 @@ $ sudo make clean install
 |           Mod           |     F8    | Use centered master layout                        |
 |           Mod           |     F9    | Use floating layout                               |
 |           Mod           |   Space   | Toggle between last used layouts                  |
+
+### Audio keybindings
+| **Modifier**            | **Key**   | **Action**                                        |
+|-------------------------|-----------|---------------------------------------------------|
+|          (Mod)          |  Volume + | Increase the volume with 5 (mod: ignore limit)    |
+|          (Mod)          |  Volume - | Decrease the volume with 5 (mod: ignore limit)    |
+|           Mod           |    Mute   | Reset the audio to 100                            |
+|          None           |    Mute   | Mute the audio                                    |
+|          None           | Play/Pause| Pause or continue the audio                       |
+|          None           | Next/Prev | Go to the next or previous audio                  |
 
 ### Launcher keybindings
 | **Modifier**            | **Key**   | **Action**                                        |
