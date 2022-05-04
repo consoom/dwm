@@ -35,9 +35,9 @@ The keybindings for the layouts can be found [on this page in the keybindings se
 ## Installation
 I don't recommend using my personal build without changing the configuration, as it's adopted to satisfy my own workflow. It's supposed to be installed and used  together with my [dotfiles](https://github.com/consoom/comfydots). Here are the install instructions:
 ```
-$ git clone https://github.com/consoom/dwm
-$ cd dwm
-$ sudo make clean install
+git clone https://github.com/consoom/dwm
+cd dwm
+sudo make clean install
 ```
 **Important: you need to install `libxft-bgra` (available in the AUR on arch), otherwise dwm will crash. This is caused by an issue in the normal libxft package that breaks rendering colored characters. [Read more](https://gitlab.freedesktop.org/xorg/lib/libxft/-/merge_requests/1).**
 
