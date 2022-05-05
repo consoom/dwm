@@ -87,6 +87,17 @@ $ sudo make clean install
 |           Mod           |     F9    | Use floating layout                               |
 |           Mod           |   Space   | Toggle between last used layouts                  |
 
+### Audio keybindings
+| **Modifier**            | **Key**   | **Action**                                        |
+|-------------------------|-----------|---------------------------------------------------|
+|          (Mod)          |  Volume + | Increase the volume with 5 (mod: ignore limit)    |
+|          (Mod)          |  Volume - | Decrease the volume with 5 (mod: ignore limit)    |
+|       Mod + Shift       |    Mute   | Reset the audio to 100                            |
+|          None           |    Mute   | Mute the audio                                    |
+|           Mod           |    Mute   | Open audio mixer                                  |
+|          None           | Play/Pause| Pause or continue the audio                       |
+|          None           | Next/Prev | Go to the next or previous audio                  |
+
 ### Launcher keybindings
 | **Modifier**            | **Key**   | **Action**                                        |
 |-------------------------|-----------|---------------------------------------------------|
