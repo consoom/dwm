@@ -3,10 +3,10 @@
 My personal build of dwm
 
 ## About
-I use this repository as a way to version control any changes I make to my window manager. My window manager contains keybindings and other customizations that are adopted to my own workflow, and thus, aren't usable for everyone. You might however take inspiration out of this build or contribute and suggest improvements. A lot of keybindings and general tools in this build rely on other programs and configurations that I keep track of in my [dotfiles repository](https://github.com/consoom/comfydots).
+I use this repository as a way to version control any changes I make to my window manager. My window manager contains keybindings and other customizations that are adopted to my own workflow, and thus, aren't usable for everyone. You might however take inspiration out this build or contribute and suggest improvements. A lot of keybindings and general tools in this build rely on other programs and configurations that I keep track of in my [dotfiles repository](https://github.com/consoom/comfydots).
 
 ## Patches done to dwm
-This build of dwm is based on [dwm 6.3](https://dl.suckless.org/dwm/dwm-6.3.tar.gz) (2022-01-07) and modified with patches and other changes of the sourcecode. I have kept all *.diff* files used to patch dwm with in [master/patches](https://github.com/consoom/dwm/tree/master/patches):
+This build of dwm is based on [dwm 6.3](https://dl.suckless.org/dwm/dwm-6.3.tar.gz) (2022-01-07) and modified with patches and other changes of the sourcecode. I have kept all *.diff* files I used to patch dwm in [master/patches](https://github.com/consoom/dwm/tree/master/patches):
 
 - [actualfullscreen](https://github.com/consoom/dwm/blob/master/patches/dwm-actualfullscreen-20211013-cb3f58a.diff) ([source](https://dwm.suckless.org/patches/actualfullscreen/)) — allows windows to get into fullscreen with a toggle
 - [attachasideandbelow](https://github.com/consoom/dwm/blob/master/patches/dwm-attachasideandbelow-20200702-f04cac6.diff) ([source](https://dwm.suckless.org/patches/attachasideandbelow/)) — attaches newly spawned windows below the selected window, as a slave
@@ -35,9 +35,9 @@ The keybindings for the layouts can be found [on this page in the keybindings se
 ## Installation
 I don't recommend using my personal build without changing the configuration, as it's adopted to satisfy my own workflow. It's supposed to be installed and used  together with my [dotfiles](https://github.com/consoom/comfydots). Here are the install instructions:
 ```
-git clone https://github.com/consoom/dwm
-cd dwm
-sudo make clean install
+$ git clone https://github.com/consoom/dwm
+$ cd dwm
+$ sudo make clean install
 ```
 **Important: you need to install `libxft-bgra` (available in the AUR on arch), otherwise dwm will crash. This is caused by an issue in the normal libxft package that breaks rendering colored characters. [Read more](https://gitlab.freedesktop.org/xorg/lib/libxft/-/merge_requests/1).**
 
@@ -86,16 +86,6 @@ sudo make clean install
 |           Mod           |     F8    | Use centered master layout                        |
 |           Mod           |     F9    | Use floating layout                               |
 |           Mod           |   Space   | Toggle between last used layouts                  |
-
-### Audio keybindings
-| **Modifier**            | **Key**   | **Action**                                        |
-|-------------------------|-----------|---------------------------------------------------|
-|          (Mod)          |  Volume + | Increase the volume with 5 (mod: ignore limit)    |
-|          (Mod)          |  Volume - | Decrease the volume with 5 (mod: ignore limit)    |
-|           Mod           |    Mute   | Reset the audio to 100                            |
-|          None           |    Mute   | Mute the audio                                    |
-|          None           | Play/Pause| Pause or continue the audio                       |
-|          None           | Next/Prev | Go to the next or previous audio                  |
 
 ### Launcher keybindings
 | **Modifier**            | **Key**   | **Action**                                        |

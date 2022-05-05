@@ -32,7 +32,7 @@ typedef struct {
        const void *cmd;
 } Sp;
 const char *spcmd1[] = {"st", "-n", "spterm", "-g", "120x34", NULL };
-const char *spcmd2[] = {"st", "-n", "spaudiomix", "-g", "100x30", "-e", "pulsemixer", NULL };
+const char *spcmd2[] = {"sh", "-c", "st -n spaudiomix -g 100x30 -e pulsemixer ; kill -44 $(pidof dwmblocks)", NULL };
 //const char *spcmd2[] = {"st", "-n", "spfm", "-g", "144x41", "-e", "ranger", NULL };
 //const char *spcmd3[] = {"keepassxc", NULL };
 static Sp scratchpads[] = {
@@ -153,13 +153,14 @@ static Key keys[] = {
 	{ MODKEY,                       XK_grave,  spawn,          {.v = dmenucmd } },
 
 	// audio controls
-	{ MODKEY,XF86XK_AudioMute,                 togglescratch,  {.ui = 1 } },
-	{ 0, XF86XK_AudioMute,			   spawn,     SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
-	{ 0, XF86XK_AudioRaiseVolume,		   spawn,    SHCMD("pamixer -i 5; kill -44 $(pidof dwmblocks)") },
+	{ MODKEY, XF86XK_AudioMute,                togglescratch,  {.ui = 1 } },
+	{ MODKEY, XF86XK_AudioMute,                spawn,     SHCMD("kill -44 $(pidof dwmblocks)") },
+	{ 0, XF86XK_AudioMute,    		   spawn,     SHCMD("pamixer -t; kill -44 $(pidof dwmblocks)") },
+	{ 0, XF86XK_AudioRaiseVolume,		   spawn,     SHCMD("pamixer -i 5; kill -44 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioLowerVolume,		   spawn,     SHCMD("pamixer -d 5; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY, XF86XK_AudioRaiseVolume,	   spawn,     SHCMD("pamixer --allow-boost -i 5; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY, XF86XK_AudioLowerVolume,	   spawn,     SHCMD("pamixer --allow-boost -d 5; kill -44 $(pidof dwmblocks)") },
-	{ MODKEY, XF86XK_AudioMute,		   spawn,     SHCMD("pamixer --set-volume 100; kill -44 $(pidof dwmblocks)") },
+	{ MODKEY|ShiftMask, XF86XK_AudioMute,      spawn,     SHCMD("pamixer --set-volume 100; kill -44 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioPause,			   spawn,     SPAWN("playerctl", "play-pause") },
 	{ 0, XF86XK_AudioPlay,			   spawn,     SPAWN("playerctl", "play-pause") },
 	{ 0, XF86XK_AudioStop,			   spawn,     SPAWN("playerctl", "stop") },
