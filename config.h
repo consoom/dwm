@@ -151,6 +151,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_w,      spawn,	   SHCMD("$BROWSER") },
 	{ MODKEY,	                XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_grave,  spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_Escape, spawn,          SPAWN("powerman") },
 
 	// audio controls
 	{ MODKEY, XF86XK_AudioMute,                togglescratch,  {.ui = 1 } },

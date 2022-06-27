@@ -104,3 +104,4 @@ $ sudo make clean install
 |           Mod           |   Return  | Launch the terminal                               |
 |           Mod           |     w     | Launch the browser                                |
 |           Mod           | ` (grave) | Launch dmenu                                      |
+|           Mod           |   Escape  | Launch power management options                   |
