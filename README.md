@@ -10,6 +10,7 @@ This build of dwm is based on [dwm 6.3](https://dl.suckless.org/dwm/dwm-6.3.tar.
 
 - [actualfullscreen](https://github.com/consoom/dwm/blob/master/patches/dwm-actualfullscreen-20211013-cb3f58a.diff) ([source](https://dwm.suckless.org/patches/actualfullscreen/)) — allows windows to get into fullscreen with a toggle
 - [attachasideandbelow](https://github.com/consoom/dwm/blob/master/patches/dwm-attachasideandbelow-20200702-f04cac6.diff) ([source](https://dwm.suckless.org/patches/attachasideandbelow/)) — attaches newly spawned windows below the selected window, as a slave
+- [hide vacant tags](https://github.com/consoom/dwm/blob/master/patches/dwm-hide_vacant_tags-6.3.diff) ([source](https://dwm.suckless.org/patches/hide_vacant_tags/)) — hides empty tags in the bar
 - [noborderselflickerfix](https://github.com/consoom/dwm/blob/master/patches/dwm-noborderselflickerfix-2022042627-d93ff48803f0.diff) ([source](https://dwm.suckless.org/patches/noborder/)) — removes the border around a window if there is only one visible
 - [scratchpads](https://github.com/consoom/dwm/blob/master/patches/dwm-scratchpads-20200414-728d397b.diff) ([source](https://dwm.suckless.org/patches/scratchpads/)) — adds scratchpad-like functionality, configurable in config.h
 - [statuscmd](https://github.com/consoom/dwm/blob/master/patches/dwm-statuscmd-20210405-67d76bd.diff) ([source](https://dwm.suckless.org/patches/statuscmd/)) — makes it possible to signal button presses on the statusbar to programs like [dwmblocks](https://github.com/consoom/dwmblocks)
