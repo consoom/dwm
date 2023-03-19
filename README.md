@@ -3,24 +3,33 @@
 My personal build of dwm
 
 ## About
-I use this repository as a way to version control any changes I make to my window manager. My window manager contains keybindings and other customizations that are adopted to my own workflow, and thus, aren't usable for everyone. You might however take inspiration out this build or contribute and suggest improvements. A lot of keybindings and general tools in this build rely on other programs and configurations that I keep track of in my [dotfiles repository](https://github.com/consoom/comfydots).
+I use this repository as a way to version control any changes I make to my window manager. My window manager contains keybindings and other customizations that are adopted to my own workflow, thus making it dependent on other programs and tools I use. I track all of the required tools (including this window manager itself) in my [dotfiles repository](https://github.com/consoom/comfydots) to form a coherent and reproducible desktop environment.
 
-## Patches done to dwm
-This build of dwm is based on [dwm 6.3](https://dl.suckless.org/dwm/dwm-6.3.tar.gz) (2022-01-07) and modified with patches and other changes to the sourcecode. I have kept all used *.diff files* to patch dwm with in [master/patches](https://github.com/consoom/dwm/tree/master/patches):
+## Features
+This build of dwm is based on [dwm 6.4](https://dl.suckless.org/dwm/dwm-6.4.tar.gz) (2022-10-04) and modified with patches and other changes to the sourcecode outside of patches itself. I have kept all used *.diff files* in [master/patches](https://github.com/consoom/dwm/tree/master/patches). Mentionable additions are:
 
 - [actualfullscreen](https://github.com/consoom/dwm/blob/master/patches/dwm-actualfullscreen-20211013-cb3f58a.diff) ([source](https://dwm.suckless.org/patches/actualfullscreen/)) — allows windows to get into fullscreen with a toggle
+- [alwayscenter]() ([source](https://dwm.suckless.org/patches/alwayscenter/)) — makes floating windows spawn in the center
 - [attachasideandbelow](https://github.com/consoom/dwm/blob/master/patches/dwm-attachasideandbelow-20200702-f04cac6.diff) ([source](https://dwm.suckless.org/patches/attachasideandbelow/)) — attaches newly spawned windows below the selected window, as a slave
 - [hide vacant tags](https://github.com/consoom/dwm/blob/master/patches/dwm-hide_vacant_tags-6.3.diff) ([source](https://dwm.suckless.org/patches/hide_vacant_tags/)) — hides empty tags in the bar
-- [noborderselflickerfix](https://github.com/consoom/dwm/blob/master/patches/dwm-noborderselflickerfix-2022042627-d93ff48803f0.diff) ([source](https://dwm.suckless.org/patches/noborder/)) — removes the border around a window if there is only one visible
+- [noborder](https://github.com/consoom/dwm/blob/master/patches/dwm-noborderselflickerfix-2022042627-d93ff48803f0.diff) ([source](https://dwm.suckless.org/patches/noborder/)) — removes the border around a window if there is only one visible
+- [pertag]() ([source](https://dwm.suckless.org/patches/pertag/)) — keeps layout configurations seperate per tag
+- [resetlayout]() ([source](https://dwm.suckless.org/patches/resetlayout/)) — resets the layout configuration of a tag when there is only one window left
 - [scratchpads](https://github.com/consoom/dwm/blob/master/patches/dwm-scratchpads-20200414-728d397b.diff) ([source](https://dwm.suckless.org/patches/scratchpads/)) — adds scratchpad-like functionality, configurable in config.h
-- [statuscmd](https://github.com/consoom/dwm/blob/master/patches/dwm-statuscmd-20210405-67d76bd.diff) ([source](https://dwm.suckless.org/patches/statuscmd/)) — makes it possible to signal button presses on the statusbar to programs like [dwmblocks](https://github.com/consoom/dwmblocks)
-- [sticky](https://github.com/consoom/dwm/blob/master/patches/dwm-sticky-6.1.diff) ([source](https://dwm.suckless.org/patches/sticky/)) — adds the ability to toggle windows to be displayed in all tags, and return to its original tag when turned off
-- [swallow](https://github.com/consoom/dwm/blob/master/patches/dwm-swallow-20201211-61bb8b2.diff) ([source](https://dwm.suckless.org/patches/swallow/)) — makes certain programs "swallowable" by a terminal application
-- [vanitygaps](https://github.com/consoom/dwm/blob/master/patches/dwm-vanitygaps-6.2.diff) ([source](https://dwm.suckless.org/patches/vanitygaps/)) — adds gaps and new layouts to dwm
-- [xrdb](https://github.com/consoom/dwm/blob/master/patches/dwm-xrdb-6.2.diff) ([source](https://dwm.suckless.org/patches/xrdb/)) — makes it possible to dynamically reload the colors used in dwm via xrdb
+- [shiftview]() ([source](https://dwm.suckless.org/patches/nextprev/)) — cycle through tags
+- [stacker]() ([source](https://dwm.suckless.org/patches/stacker/)) — move/focus windows through the stack
+- [status2d]() ([source](https://codeberg.org/speedie/patches/src/commit/ae2a0ef506197fe2b0eebdf921722ae97d13f1a5/dwm-status2d-statuscmd-6.4.diff)) — adds text color and rectangle drawing functionality to the statusbar
+- [statuscmd]() ([source](https://codeberg.org/speedie/patches/src/commit/ae2a0ef506197fe2b0eebdf921722ae97d13f1a5/dwm-status2d-statuscmd-6.4.diff)) — makes it possible to signal button presses on the statusbar to programs like [dwmblocks](https://github.com/consoom/dwmblocks)
+- [sticky]() ([source](https://dwm.suckless.org/patches/sticky/)) — adds the ability to toggle windows to be displayed on every tag, and return to its original tag when turned off
+- [swallow]() ([source](https://dwm.suckless.org/patches/swallow/)) — makes certain programs 'swallowable' by a terminal application
+- [vanitygaps]() ([source](https://dwm.suckless.org/patches/vanitygaps/)) — adds window gaps, 'weights' and new layouts to tiling mode
+- [xrdb]() ([source](https://dwm.suckless.org/patches/xrdb/)) — makes it possible to dynamically reload the colors used in dwm via xrdb
 
-## Layouts
-This build includes the following layouts:
+## Installation & usage
+This program is supposed to be installed and used together with my [dotfiles](https://github.com/consoom/comfydots), which will install this build of dwm and all of the other tools and configurations I use automatically for you. I don't recommend using my personal configurations without first changing them to your own needs, but feel free to experiment and contribute to them.
+
+### Layouts
+This build includes the following tiling layouts:
 - *tile* — default layout: masters on left, slaves on right
 - *bstack* — masters on top, slaves on bottom
 - *spiral* — fibonacci spiral
@@ -31,36 +40,28 @@ This build includes the following layouts:
 - *centeredmaster* — masters in the middle, slaves leftward and rightward
 - *floating* — no tiling at all
 
-The keybindings for the layouts can be found [on this page in the keybindings section](https://github.com/consoom/dwm#layout-keybindings).
+### Keybindings
 
-## Installation
-I don't recommend using my personal build without changing the configuration, as it's adopted to satisfy my own workflow. It's supposed to be installed and used  together with my [dotfiles](https://github.com/consoom/comfydots). Here are the install instructions:
-```
-$ git clone https://github.com/consoom/dwm
-$ cd dwm
-$ sudo make clean install
-```
-**Important: you need to install `libxft-bgra` (available in the AUR on arch), otherwise dwm will crash. This is caused by an issue in the normal libxft package that breaks rendering colored characters. [Read more](https://gitlab.freedesktop.org/xorg/lib/libxft/-/merge_requests/1).**
-
-## Keybindings
-
-### General keybindings
+#### General keybindings
 | **Modifier**            | **Key**   | **Action**                                        |
 |-------------------------|-----------|---------------------------------------------------|
 |           Mod           |     b     | Toggle bar                                        |
-|           Mod           |     j     | Go to next window on stack                        |
-|           Mod           |     k     | Go to previous window on stack                    |
+|      Mod (+ Shift)      |     j     | Focus/(move window to) next window in stack       |
+|      Mod (+ Shift)      |     k     | Focus/(move window to) previous window in stack   |
+|      Mod (+ Shift)      |     r     | Focus/(move window to) previous selected window   |
+|      Mod (+ Shift)      |     c     | Focus/(move window to) first window in stack      |
 |           Mod           |     i     | Increase the amount of masters                    |
 |           Mod           |     d     | Decrease the amount of masters                    |
-|           Mod           |     h     | Decrease the amount of space the masters takes up |
 |           Mod           |     l     | Increase the amount of space the masters takes up |
+|           Mod           |     h     | Decrease the amount of space the masters takes up |
+|       Mod + Shift       |     l     | Increase the weight of the selected window        |
+|       Mod + Shift       |     h     | Decrease the weight of the selected window        |
 |       Mod + Shift       |   Return  | Make selected window a master                     |
 |           Mod           |     =     | Increase gaps with 1                              |
 |           Mod           |     -     | Decrease gaps with 1                              |
 |       Mod + Shift       |     -     | Toggle gaps                                       |
 |       Mod + Shift       |     =     | Reset gap size to default                         |
-|           Mod           |    Tab    | Go to previous viewed tag                         |
-|       Mod + Shift       |     c     | Kill a window                                     |
+|       Mod + Shift       |     q     | Kill a window                                     |
 |       Mod + Shift       |   Space   | Toggle floating mode for the selected window      |
 |       Mod + Shift       |     f     | Toggle fullscreen for the selected window         |
 |           Mod           |     y     | Open a st window in a scratchpad (for now)        |
@@ -68,13 +69,14 @@ $ sudo make clean install
 |       Mod + Shift       |     F5    | Reload Xresources and change colors of dwm        |
 |           Mod           |     p     | Screenshot a selection and copy to clipboard      |
 |       Mod + Shift       |     p     | Screenshot the whole screen and copy to clipboard |
-|     Mod (+ Control)     |    1-9    | View tag n                                        |
-| Mod + Shift (+ Control) |    1-9    | Move window to tag n                              |
-|           Mod           |     0     | View all open windows on all tags                 |
-|       Mod + Shift       |     0     | Give the selected window all tags                 |
+| Mod (+Shift) (+ Control)|    1-9    | View/(move window to) tag n (control: more tags)  |
+|      Mod (+ Shift)      |     0     | View/(move window to) all tags                    |
+|      Mod (+ Shift)      |     ;     | View/(move window to) next tag                    |
+|      Mod (+ Shift)      |     g     | View/(move window to) previous tag                |
+|           Mod           |    Tab    | View previous viewed tag                          |
 |       Mod + Shift       |   Delete  | Quit dwm                                          |
 
-### Layout keybindings
+#### Layout keybindings
 | **Modifier**            | **Key**   | **Action**                                        |
 |-------------------------|-----------|---------------------------------------------------|
 |           Mod           |     F1    | Use tile layout                                   |
@@ -88,7 +90,7 @@ $ sudo make clean install
 |           Mod           |     F9    | Use floating layout                               |
 |           Mod           |   Space   | Toggle between last used layouts                  |
 
-### Audio keybindings
+#### Audio keybindings
 | **Modifier**            | **Key**   | **Action**                                        |
 |-------------------------|-----------|---------------------------------------------------|
 |          (Mod)          |  Volume + | Increase the volume with 5 (mod: ignore limit)    |
@@ -99,7 +101,7 @@ $ sudo make clean install
 |          None           | Play/Pause| Pause or continue the audio                       |
 |          None           | Next/Prev | Go to the next or previous audio                  |
 
-### Launcher keybindings
+#### Launcher keybindings
 | **Modifier**            | **Key**   | **Action**                                        |
 |-------------------------|-----------|---------------------------------------------------|
 |           Mod           |   Return  | Launch the terminal                               |
