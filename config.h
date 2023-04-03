@@ -19,39 +19,39 @@ static char normfgcolor[]           = "#bbbbbb";
 static char selfgcolor[]            = "#eeeeee";
 static char selbordercolor[]        = "#005577";
 static char selbgcolor[]            = "#005577";
-static char termcol0[] = "#000000"; /* black   */
-static char termcol1[] = "#ff0000"; /* red     */
-static char termcol2[] = "#33ff00"; /* green   */
-static char termcol3[] = "#ff0099"; /* yellow  */
-static char termcol4[] = "#0066ff"; /* blue    */
-static char termcol5[] = "#cc00ff"; /* magenta */
-static char termcol6[] = "#00ffff"; /* cyan    */
-static char termcol7[] = "#d0d0d0"; /* white   */
-static char termcol8[]  = "#808080"; /* black   */
-static char termcol9[]  = "#ff0000"; /* red     */
-static char termcol10[] = "#33ff00"; /* green   */
-static char termcol11[] = "#ff0099"; /* yellow  */
-static char termcol12[] = "#0066ff"; /* blue    */
-static char termcol13[] = "#cc00ff"; /* magenta */
-static char termcol14[] = "#00ffff"; /* cyan    */
-static char termcol15[] = "#ffffff"; /* white   */
-static char *termcolor[] = {
-  termcol0,
-  termcol1,
-  termcol2,
-  termcol3,
-  termcol4,
-  termcol5,
-  termcol6,
-  termcol7,
-  termcol8,
-  termcol9,
-  termcol10,
-  termcol11,
-  termcol12,
-  termcol13,
-  termcol14,
-  termcol15,
+static char sbcol0[] = "#000000"; /* black   */
+static char sbcol1[] = "#ff0000"; /* red     */
+static char sbcol2[] = "#33ff00"; /* green   */
+static char sbcol3[] = "#ff0099"; /* yellow  */
+static char sbcol4[] = "#0066ff"; /* blue    */
+static char sbcol5[] = "#cc00ff"; /* magenta */
+static char sbcol6[] = "#00ffff"; /* cyan    */
+static char sbcol7[] = "#d0d0d0"; /* white   */
+static char sbcol8[]  = "#808080"; /* black   */
+static char sbcol9[]  = "#ff0000"; /* red     */
+static char sbcol10[] = "#33ff00"; /* green   */
+static char sbcol11[] = "#ff0099"; /* yellow  */
+static char sbcol12[] = "#0066ff"; /* blue    */
+static char sbcol13[] = "#cc00ff"; /* magenta */
+static char sbcol14[] = "#00ffff"; /* cyan    */
+static char sbcol15[] = "#ffffff"; /* white   */
+static char *sbcolor[] = {
+  sbcol0,
+  sbcol1,
+  sbcol2,
+  sbcol3,
+  sbcol4,
+  sbcol5,
+  sbcol6,
+  sbcol7,
+  sbcol8,
+  sbcol9,
+  sbcol10,
+  sbcol11,
+  sbcol12,
+  sbcol13,
+  sbcol14,
+  sbcol15,
 };
 static char *colors[][3] = {
        /*               fg           bg           border   */
