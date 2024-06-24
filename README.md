@@ -14,6 +14,7 @@ This build of dwm is based on [dwm 6.5](https://dl.suckless.org/dwm/dwm-6.5.tar.
 - [attachasideandbelow](https://github.com/consoom/dwm/blob/master/patches/dwm-attachasideandbelow-20200702-f04cac6.diff) ([source](https://dwm.suckless.org/patches/attachasideandbelow/)) — attaches newly spawned windows below the selected window, as a slave
 - [hide vacant tags](https://github.com/consoom/dwm/blob/master/patches/dwm-hide_vacant_tags-6.3.diff) ([source](https://dwm.suckless.org/patches/hide_vacant_tags/)) — hides empty tags in the bar
 - [removeborder]() ([source]()) — removes the border around a window if there is only one window visible
+    - customizable with the "solitarygaps" rule in config.h (0 means no border/gaps when only one window is visible (default), 1 means display border/gaps anyway)
 - [pertag](https://github.com/consoom/dwm/blob/master/patches/dwm-pertag-20200914-61bb8b2.diff) ([source](https://dwm.suckless.org/patches/pertag/)) — keeps layout configurations seperated between tags
 - [resetlayout](https://github.com/consoom/dwm/blob/master/patches/dwm-resetlayout-6.2.diff) ([source](https://dwm.suckless.org/patches/resetlayout/)) — resets the layout configuration of a tag when there is only one window left
 - [scratchpads](https://github.com/consoom/dwm/blob/master/patches/dwm-scratchpads-20200414-728d397b.diff) ([source](https://dwm.suckless.org/patches/scratchpads/)) — adds scratchpad-like functionality, configurable in config.h

@@ -126,7 +126,7 @@ struct Client {
 	int basew, baseh, incw, inch, maxw, maxh, minw, minh, hintsvalid;
 	int bw, oldbw;
 	unsigned int tags;
-	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen, issticky, isterminal, noswallow;
+	int isfixed, isfloating, isurgent, neverfocus, oldstate, isfullscreen, issticky, isterminal, noswallow, solitarygaps;
 	pid_t pid;
 	Client *next;
 	Client *snext;
@@ -182,6 +182,7 @@ typedef struct {
 	int isfloating;
 	int isterminal;
 	int noswallow;
+	int solitarygaps;
 	int monitor;
 } Rule;
 
@@ -387,6 +388,7 @@ applyrules(Client *c)
 			c->isterminal = r->isterminal;
 			c->noswallow  = r->noswallow;
 			c->isfloating = r->isfloating;
+			c->solitarygaps = r->solitarygaps;
 			c->tags |= r->tags;
 			if ((r->tags & SPTAGMASK) && r->isfloating) {
 				c->x = c->mon->wx + (c->mon->ww / 2 - WIDTH(c) / 2);
@@ -1829,7 +1831,7 @@ resizeclient(Client *c, int x, int y, int w, int h)
 
 	for (n = 0, nbc = nexttiled(c->mon->clients); nbc; nbc = nexttiled(nbc->next), n++);
 
-	if (c->isfloating || c->mon->lt[c->mon->sellt]->arrange == NULL) {
+	if (c->isfloating || c->solitarygaps || c->mon->lt[c->mon->sellt]->arrange == NULL) {
 	} else {
 		if (c->mon->lt[c->mon->sellt]->arrange == monocle || n == 1) {
 			wc.border_width = 0;
