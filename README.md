@@ -39,7 +39,7 @@ This build includes keybindings for the following tiling layouts:
 - *nrowgrid* — grid view, customizable number of rows by changing the number of master windows
 - *centeredmaster* — masters in the middle, slaves leftward and rightward
 - *floating* — no tiling at all
--
+
 ## Installation & usage
 This program is supposed to be used in tandem with my [dotfiles](https://github.com/consoom/comfydots), as it relies on some other software, environment variables, configurations and the like. Although my dotfiles repository includes a bootstrapping script, I don't recommend using my personal configurations without first changing them to your own needs.
 
