@@ -6,27 +6,26 @@ My personal build of dwm
 I use this repository as a way to version control any changes I make to my window manager. My window manager contains keybindings and other customizations that are adopted to my own workflow, thus making it dependent on other programs and tools I use. I track all of the required tools (including this window manager itself) in my [dotfiles repository](https://github.com/consoom/comfydots) to form a coherent and reproducible desktop environment.
 
 ## Features
-This build of dwm is based on [dwm 6.4](https://dl.suckless.org/dwm/dwm-6.4.tar.gz) (2022-10-04) and modified with patches and other changes to the sourcecode outside of patches itself. I have kept all used *.diff files* in [master/patches](https://github.com/consoom/dwm/tree/master/patches). Mentionable additions are:
+This build of dwm is based on [dwm 6.5](https://dl.suckless.org/dwm/dwm-6.5.tar.gz) (2024-03-19) and modified with patches and other changes to the source code outside of patches itself. I have kept all used *.diff files* in [master/patches](https://github.com/consoom/dwm/tree/master/patches). Mentionable additions are:
 
 - [actualfullscreen](https://github.com/consoom/dwm/blob/master/patches/dwm-actualfullscreen-20211013-cb3f58a.diff) ([source](https://dwm.suckless.org/patches/actualfullscreen/)) — allows windows to get into fullscreen with a toggle
+    - [losefullscreen]() ([source]()) — exit fullscreen when new windows appear
 - [alwayscenter](https://github.com/consoom/dwm/blob/master/patches/dwm-alwayscenter-20200625-f04cac6.diff) ([source](https://dwm.suckless.org/patches/alwayscenter/)) — makes floating windows spawn in the center
 - [attachasideandbelow](https://github.com/consoom/dwm/blob/master/patches/dwm-attachasideandbelow-20200702-f04cac6.diff) ([source](https://dwm.suckless.org/patches/attachasideandbelow/)) — attaches newly spawned windows below the selected window, as a slave
 - [hide vacant tags](https://github.com/consoom/dwm/blob/master/patches/dwm-hide_vacant_tags-6.3.diff) ([source](https://dwm.suckless.org/patches/hide_vacant_tags/)) — hides empty tags in the bar
-- [noborder](https://github.com/consoom/dwm/blob/master/patches/dwm-noborderselflickerfix-2022042627-d93ff48803f0.diff) ([source](https://dwm.suckless.org/patches/noborder/)) — removes the border around a window if there is only one visible
-- [pertag](https://github.com/consoom/dwm/blob/master/patches/dwm-pertag-20200914-61bb8b2.diff) ([source](https://dwm.suckless.org/patches/pertag/)) — keeps layout configurations seperate per tag
+- [removeborder]() ([source]()) — removes the border around a window if there is only one window visible
+- [pertag](https://github.com/consoom/dwm/blob/master/patches/dwm-pertag-20200914-61bb8b2.diff) ([source](https://dwm.suckless.org/patches/pertag/)) — keeps layout configurations seperated between tags
 - [resetlayout](https://github.com/consoom/dwm/blob/master/patches/dwm-resetlayout-6.2.diff) ([source](https://dwm.suckless.org/patches/resetlayout/)) — resets the layout configuration of a tag when there is only one window left
 - [scratchpads](https://github.com/consoom/dwm/blob/master/patches/dwm-scratchpads-20200414-728d397b.diff) ([source](https://dwm.suckless.org/patches/scratchpads/)) — adds scratchpad-like functionality, configurable in config.h
 - [shiftview](https://github.com/consoom/dwm/blob/master/shiftview.c) ([source](https://dwm.suckless.org/patches/nextprev/)) — cycle through tags
 - [stacker](https://github.com/consoom/dwm/blob/master/patches/dwm-stacker-6.2.diff) ([source](https://dwm.suckless.org/patches/stacker/)) — move/focus windows through the stack
 - [status2d](https://github.com/consoom/dwm/blob/master/patches/dwm-status2d-statuscmd-6.4.diff) ([source](https://codeberg.org/speedie/patches/src/commit/ae2a0ef506197fe2b0eebdf921722ae97d13f1a5/dwm-status2d-statuscmd-6.4.diff)) — adds text color and rectangle drawing functionality to the statusbar
+-     - [status2d-xrdb]() ([source]()) — makes it possible to use terminal colors in the statusbar
 - [statuscmd](https://github.com/consoom/dwm/blob/master/patches/dwm-status2d-statuscmd-6.4.diff) ([source](https://codeberg.org/speedie/patches/src/commit/ae2a0ef506197fe2b0eebdf921722ae97d13f1a5/dwm-status2d-statuscmd-6.4.diff)) — makes it possible to signal button presses on the statusbar to programs like [dwmblocks](https://github.com/consoom/dwmblocks)
 - [sticky](https://github.com/consoom/dwm/blob/master/patches/dwm-sticky-6.4.diff) ([source](https://dwm.suckless.org/patches/sticky/)) — adds the ability to toggle windows to be displayed on every tag, and return to its original tag when turned off
 - [swallow](https://github.com/consoom/dwm/blob/master/patches/dwm-swallow-6.3.diff) ([source](https://dwm.suckless.org/patches/swallow/)) — makes certain programs 'swallowable' by a terminal application
 - [vanitygaps](https://github.com/consoom/dwm/blob/master/patches/dwm-cfacts-vanitygaps-6.2_combo.diff) ([source](https://dwm.suckless.org/patches/vanitygaps/)) — adds window gaps, 'weights' and new layouts to tiling mode
 - [xrdb](https://github.com/consoom/dwm/blob/master/patches/dwm-xrdb-6.4.diff) ([source](https://dwm.suckless.org/patches/xrdb/)) — makes it possible to dynamically reload the colors used in dwm via xrdb
-
-## Installation & usage
-This program is supposed to be installed and used together with my [dotfiles](https://github.com/consoom/comfydots), which will install this build of dwm and all of the other tools and configurations I use automatically for you. I don't recommend using my personal configurations without first changing them to your own needs, but feel free to experiment and contribute to them.
 
 ### Layouts
 This build includes the following tiling layouts:
@@ -39,6 +38,9 @@ This build includes the following tiling layouts:
 - *nrowgrid* — grid view, customizable number of rows by changing the number of master windows
 - *centeredmaster* — masters in the middle, slaves leftward and rightward
 - *floating* — no tiling at all
+-
+## Installation & usage
+This program is supposed to be used in tandem with my [dotfiles](https://github.com/consoom/comfydots), as it relies on some other software, environment variables, configurations and the like. Although my dotfiles includes a bootstrapping script, I don't recommend using my personal configurations without first changing them to your own needs.
 
 ### Keybindings
 
