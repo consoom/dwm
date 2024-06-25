@@ -20,6 +20,7 @@ This build of dwm is based on [dwm 6.5](https://dl.suckless.org/dwm/dwm-6.5.tar.
 - [scratchpads](https://github.com/consoom/dwm/blob/master/patches/dwm-scratchpads-20200414-728d397b.diff) ([source](https://dwm.suckless.org/patches/scratchpads/)) — adds scratchpad-like functionality, configurable in config.h
 - [shiftview](https://github.com/consoom/dwm/blob/master/shiftview.c) ([source](https://dwm.suckless.org/patches/nextprev/)) — cycle through tags
 - [stacker](https://github.com/consoom/dwm/blob/master/patches/dwm-stacker-6.2.diff) ([source](https://dwm.suckless.org/patches/stacker/)) — move/focus windows through the stack
+	- the mouse cursor will be 'warped' to the center of a window upon moving/focusing a window if the mouse is used to do so
 - [status2d](https://github.com/consoom/dwm/blob/master/patches/dwm-status2d-statuscmd-6.4.diff) ([source](https://git.speedie.site/speedie/patches/src/commit/fc507e92d68ce579b37190fdab9ef108bbb550f2/dwm-status2d-statuscmd-6.4.diff)) — adds text color and rectangle drawing functionality to the statusbar
     - [status2d-xrdb](https://github.com/consoom/dwm/blob/master/patches/dwm-status2d-xrdb-6.2.diff) ([source](https://dwm.suckless.org/patches/status2d/)) — makes it possible to use terminal colors in the statusbar
 - [statuscmd](https://github.com/consoom/dwm/blob/master/patches/dwm-status2d-statuscmd-6.4.diff) ([source](https://git.speedie.site/speedie/patches/src/commit/fc507e92d68ce579b37190fdab9ef108bbb550f2/dwm-status2d-statuscmd-6.4.diff)) — makes it possible to signal button presses on the statusbar to programs like [dwmblocks](https://github.com/consoom/dwmblocks)
@@ -78,6 +79,12 @@ This program is supposed to be used in tandem with my [dotfiles](https://github.
 |      Mod (+ Shift)      |     g     | View/(move window to) previous tag                |
 |           Mod           |    Tab    | View previous viewed tag                          |
 |       Mod + Shift       |   Delete  | Quit dwm                                          |
+
+#### Mouse keybindings
+| **Modifier**            | **Button**   | **Action**                                     |
+|-------------------------|-----------|---------------------------------------------------|
+|      Mod (+ Shift)      |  Previous | Focus/(move window to) next window in stack       |
+|      Mod (+ Shift)      |    Next   | Focus/(move window to) previous window in stack   |
 
 #### Layout keybindings
 | **Modifier**            | **Key**   | **Action**                                        |

@@ -223,6 +223,7 @@ static void focus(Client *c);
 static void focusin(XEvent *e);
 static void focusmon(const Arg *arg);
 static void focusstack(const Arg *arg);
+static void focusstackwarp(const Arg *arg);
 static Atom getatomprop(Client *c, Atom prop);
 static int getrootptr(int *x, int *y);
 static long getstate(Window w);
@@ -246,6 +247,7 @@ static Client *nexttiled(Client *c);
 static void pop(Client *c);
 static void propertynotify(XEvent *e);
 static void pushstack(const Arg *arg);
+static void pushstackwarp(const Arg *arg);
 static void quit(const Arg *arg);
 static Monitor *recttomon(int x, int y, int w, int h);
 static void resetlayout(const Arg *arg);
@@ -590,7 +592,7 @@ buttonpress(XEvent *e)
 
 	click = ClkRootWin;
 	/* focus monitor if necessary */
-	if ((m = wintomon(ev->window)) && m != selmon) {
+	if ((m = wintomon(ev->window)) && m != selmon && (ev->button != 8 && ev->button != 9)) {
 		unfocus(selmon->sel, 1);
 		selmon = m;
 		focus(NULL);
@@ -642,7 +644,8 @@ buttonpress(XEvent *e)
 		} else
 				click = ClkWinTitle;
 	} else if ((c = wintoclient(ev->window))) {
-		focus(c);
+		if (ev->button != 8 && ev->button != 9)
+			focus(c);
 		restack(selmon);
 		XAllowEvents(dpy, ReplayPointer, CurrentTime);
 		click = ClkClientWin;
@@ -1243,6 +1246,22 @@ focusstack(const Arg *arg)
 	restack(selmon);
 }
 
+void
+focusstackwarp(const Arg *arg)
+{
+	int i = stackpos(arg);
+	Client *c, *p;
+
+	if (i < 0 || !selmon->sel || (selmon->sel->isfullscreen && lockfullscreen))
+		return;
+	for(p = NULL, c = selmon->clients; c && (i || !ISVISIBLE(c));
+	    i -= ISVISIBLE(c) ? 1 : 0, p = c, c = c->next);
+	losefullscreen(selmon->sel, c);
+	focus(c ? c : p);
+	restack(selmon);
+	XWarpPointer(dpy, None, c->win, 0, 0, 0, 0, c->w/2, c->h/2);
+}
+
 Atom
 getatomprop(Client *c, Atom prop)
 {
@@ -1774,6 +1793,31 @@ pushstack(const Arg *arg) {
 		c->next = sel;
 	}
 	arrange(selmon);
+}
+
+void
+pushstackwarp(const Arg *arg) {
+	int i = stackpos(arg);
+	Client *sel = selmon->sel, *c, *p;
+
+	if(i < 0)
+		return;
+	else if(i == 0) {
+		detach(sel);
+		attach(sel);
+	}
+	else {
+		for(p = NULL, c = selmon->clients; c; p = c, c = c->next)
+			if(!(i -= (ISVISIBLE(c) && c != sel)))
+				break;
+		c = c ? c : p;
+		detach(sel);
+		sel->next = c->next;
+		c->next = sel;
+	}
+
+	arrange(selmon);
+	XWarpPointer(dpy, None, sel->win, 0, 0, 0, 0, sel->w/2, sel->h/2);
 }
 
 void
