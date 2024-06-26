@@ -253,6 +253,8 @@ static const Button buttons[] = {
 	{ ClkTagBar,            0,             		Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,        		Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,        		Button3,        toggletag,      {0} },
+	{ ClkTagBar,		0,			Button4,	shiftview,	{.i = -1} },
+	{ ClkTagBar,		0,			Button5,	shiftview,	{.i = 1} },
 	{ ClkClientWin,		MODKEY,        		Button9, 	focusstackwarp,	{.i = INC(-1) } },
 	{ ClkClientWin,         MODKEY,        		Button8,      	focusstackwarp,	{.i = INC(+1) } },
 	{ ClkClientWin,		MODKEY|ShiftMask,	Button9, 	pushstackwarp,	{.i = INC(-1) } },
